@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29416F4188B76180CD5C277F /* Pods_Billy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C856A0914A64D266BF7F54 /* Pods_Billy.framework */; };
 		2DDB0DBA2956349D00DA6B0C /* BillyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDB0DB92956349D00DA6B0C /* BillyApp.swift */; };
 		2DDB0DBC2956349D00DA6B0C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDB0DBB2956349D00DA6B0C /* MainView.swift */; };
 		2DDB0DBE2956349F00DA6B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DDB0DBD2956349F00DA6B0C /* Assets.xcassets */; };
@@ -29,6 +30,9 @@
 		2DDB0DD42956361C00DA6B0C /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		2DDB0DD62956363300DA6B0C /* ExpenseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseList.swift; sourceTree = "<group>"; };
 		2DDB0DDA295637E900DA6B0C /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		80A85B6D4D950BF60E005F3F /* Pods-Billy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Billy.release.xcconfig"; path = "Target Support Files/Pods-Billy/Pods-Billy.release.xcconfig"; sourceTree = "<group>"; };
+		89C856A0914A64D266BF7F54 /* Pods_Billy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Billy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1809F09A43FAECD731E5DBF /* Pods-Billy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Billy.debug.xcconfig"; path = "Target Support Files/Pods-Billy/Pods-Billy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29416F4188B76180CD5C277F /* Pods_Billy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,8 @@
 			children = (
 				2DDB0DB82956349D00DA6B0C /* Billy */,
 				2DDB0DB72956349D00DA6B0C /* Products */,
+				C539263C77A5D75C2507807B /* Pods */,
+				7C4B44184F4A49DC44DA04D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +169,24 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		7C4B44184F4A49DC44DA04D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89C856A0914A64D266BF7F54 /* Pods_Billy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C539263C77A5D75C2507807B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1809F09A43FAECD731E5DBF /* Pods-Billy.debug.xcconfig */,
+				80A85B6D4D950BF60E005F3F /* Pods-Billy.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DDB0DC42956349F00DA6B0C /* Build configuration list for PBXNativeTarget "Billy" */;
 			buildPhases = (
+				2F9C48E78B687251FB8C4F66 /* [CP] Check Pods Manifest.lock */,
 				2DDB0DB22956349D00DA6B0C /* Sources */,
 				2DDB0DB32956349D00DA6B0C /* Frameworks */,
 				2DDB0DB42956349D00DA6B0C /* Resources */,
+				4E8A597AB618D03314CF1684 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +253,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F9C48E78B687251FB8C4F66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Billy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E8A597AB618D03314CF1684 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Billy/Pods-Billy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Billy/Pods-Billy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Billy/Pods-Billy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DDB0DB22956349D00DA6B0C /* Sources */ = {
@@ -361,6 +430,7 @@
 		};
 		2DDB0DC52956349F00DA6B0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1809F09A43FAECD731E5DBF /* Pods-Billy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -393,6 +463,7 @@
 		};
 		2DDB0DC62956349F00DA6B0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80A85B6D4D950BF60E005F3F /* Pods-Billy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
